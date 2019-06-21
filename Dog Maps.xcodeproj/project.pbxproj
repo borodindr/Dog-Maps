@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32213C6422BC277C00FF5724 /* MapNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */; };
+		32213C6622BC314900FF5724 /* MapNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32213C6522BC314900FF5724 /* MapNavigationButton.swift */; };
 		32DA1D0622B7C93700E972A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D0522B7C93700E972A0 /* AppDelegate.swift */; };
-		32DA1D0822B7C93700E972A0 /* DogGroundsMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D0722B7C93700E972A0 /* DogGroundsMapViewController.swift */; };
+		32DA1D0822B7C93700E972A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D0722B7C93700E972A0 /* MapViewController.swift */; };
 		32DA1D0B22B7C93700E972A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DA1D0922B7C93700E972A0 /* Main.storyboard */; };
 		32DA1D0D22B7C93A00E972A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DA1D0C22B7C93A00E972A0 /* Assets.xcassets */; };
 		32DA1D1022B7C93A00E972A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DA1D0E22B7C93A00E972A0 /* LaunchScreen.storyboard */; };
-		32DA1D1822B7C9D500E972A0 /* DogGroundDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D1722B7C9D500E972A0 /* DogGroundDetailsViewController.swift */; };
+		32DA1D1822B7C9D500E972A0 /* MapDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D1722B7C9D500E972A0 /* MapDetailsViewController.swift */; };
 		32DA1D1D22B7CA8F00E972A0 /* MapDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D1C22B7CA8F00E972A0 /* MapDetailsView.swift */; };
 		32DA1D1F22B7CAC000E972A0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D1E22B7CAC000E972A0 /* PhotoCollectionViewCell.swift */; };
 		32DA1D2122B7CAEC00E972A0 /* FacilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */; };
@@ -20,19 +22,22 @@
 		32DA1D2522B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */; };
 		32DA1D2722B7CB4A00E972A0 /* OpenSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */; };
 		32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */; };
-		32DA1D2B22B7CB7D00E972A0 /* DogGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2A22B7CB7D00E972A0 /* DogGround.swift */; };
+		32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */; };
 		32DA1D2D22B7CBB800E972A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2C22B7CBB800E972A0 /* Extensions.swift */; };
+		32EDA50422BC261600848A49 /* MapViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EDA50322BC261500848A49 /* MapViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationButtonView.swift; sourceTree = "<group>"; };
+		32213C6522BC314900FF5724 /* MapNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationButton.swift; sourceTree = "<group>"; };
 		32DA1D0222B7C93700E972A0 /* Dog Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DA1D0522B7C93700E972A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32DA1D0722B7C93700E972A0 /* DogGroundsMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGroundsMapViewController.swift; sourceTree = "<group>"; };
+		32DA1D0722B7C93700E972A0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		32DA1D0A22B7C93700E972A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32DA1D0C22B7C93A00E972A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DA1D0F22B7C93A00E972A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DA1D1122B7C93A00E972A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32DA1D1722B7C9D500E972A0 /* DogGroundDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGroundDetailsViewController.swift; sourceTree = "<group>"; };
+		32DA1D1722B7C9D500E972A0 /* MapDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailsViewController.swift; sourceTree = "<group>"; };
 		32DA1D1C22B7CA8F00E972A0 /* MapDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailsView.swift; sourceTree = "<group>"; };
 		32DA1D1E22B7CAC000E972A0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityTableViewCell.swift; sourceTree = "<group>"; };
@@ -40,8 +45,9 @@
 		32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailsTableViewHeaderView.swift; sourceTree = "<group>"; };
 		32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceService.swift; sourceTree = "<group>"; };
 		32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotaion.swift; sourceTree = "<group>"; };
-		32DA1D2A22B7CB7D00E972A0 /* DogGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogGround.swift; sourceTree = "<group>"; };
+		32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPlaceLocationAnnotation.swift; sourceTree = "<group>"; };
 		32DA1D2C22B7CBB800E972A0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		32EDA50322BC261500848A49 /* MapViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +96,8 @@
 		32DA1D1922B7CA2A00E972A0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				32DA1D0722B7C93700E972A0 /* DogGroundsMapViewController.swift */,
-				32DA1D1722B7C9D500E972A0 /* DogGroundDetailsViewController.swift */,
+				32DA1D0722B7C93700E972A0 /* MapViewController.swift */,
+				32DA1D1722B7C9D500E972A0 /* MapDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -104,6 +110,9 @@
 				32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */,
 				32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */,
 				32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */,
+				32EDA50322BC261500848A49 /* MapViewHeaderView.swift */,
+				32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */,
+				32213C6522BC314900FF5724 /* MapNavigationButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,7 +122,7 @@
 			children = (
 				32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */,
 				32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */,
-				32DA1D2A22B7CB7D00E972A0 /* DogGround.swift */,
+				32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,13 +199,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				32DA1D2122B7CAEC00E972A0 /* FacilityTableViewCell.swift in Sources */,
+				32213C6622BC314900FF5724 /* MapNavigationButton.swift in Sources */,
 				32DA1D2522B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift in Sources */,
 				32DA1D2322B7CB0300E972A0 /* ScheduleTableViewCell.swift in Sources */,
 				32DA1D2D22B7CBB800E972A0 /* Extensions.swift in Sources */,
-				32DA1D0822B7C93700E972A0 /* DogGroundsMapViewController.swift in Sources */,
+				32DA1D0822B7C93700E972A0 /* MapViewController.swift in Sources */,
 				32DA1D1F22B7CAC000E972A0 /* PhotoCollectionViewCell.swift in Sources */,
-				32DA1D2B22B7CB7D00E972A0 /* DogGround.swift in Sources */,
-				32DA1D1822B7C9D500E972A0 /* DogGroundDetailsViewController.swift in Sources */,
+				32213C6422BC277C00FF5724 /* MapNavigationButtonView.swift in Sources */,
+				32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */,
+				32EDA50422BC261600848A49 /* MapViewHeaderView.swift in Sources */,
+				32DA1D1822B7C9D500E972A0 /* MapDetailsViewController.swift in Sources */,
 				32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */,
 				32DA1D1D22B7CA8F00E972A0 /* MapDetailsView.swift in Sources */,
 				32DA1D2722B7CB4A00E972A0 /* OpenSourceService.swift in Sources */,

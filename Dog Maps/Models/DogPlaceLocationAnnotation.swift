@@ -10,9 +10,13 @@ import UIKit
 import MapKit
 import Contacts
 
-class DogGround: LocationAnnotaion {
+protocol LocationAnnotationDelegate: AnyObject {
+    func dogGround(didFinishLoading photos: [UIImage])
+}
+
+class DogPlaceLocationAnnotation: LocationAnnotaion {
     
-    weak var delegate: DogGroundDelegate?
+    weak var delegate: LocationAnnotationDelegate?
     
     private var photosLnksSuffixes: [PhotosLnksSuffixes]?
     private var rawFacilities: [String]?
@@ -91,14 +95,6 @@ class DogGround: LocationAnnotaion {
         }
         
     }
-    
-    //    func mapItem() -> MKMapItem {
-    //        let addressDict = [CNPostalAddressStreetKey: title!]
-    //        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: addressDict)
-    //        let mapItem = MKMapItem(placemark: placemark)
-    //        mapItem.name = "Собачья площадка"
-    //        return mapItem
-    //    }
 }
 
 struct Facility {

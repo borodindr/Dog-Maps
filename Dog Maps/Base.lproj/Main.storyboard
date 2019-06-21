@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dog Grounds Map View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DogGroundsMapViewController" customModule="Dog_Maps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Dog_Maps" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,20 +21,126 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ARz-Kd-qvQ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQy-jG-ACC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-H1-SjU">
+                                <rect key="frame" x="366" y="369.5" width="40" height="157"/>
+                                <subviews>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipr-wd-eGS" customClass="MapNavigationButtonView" customModule="Dog_Maps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="101"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Upl-e0-2g5">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="101"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZy-XB-N1c" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="QhI-np-iN1"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="Plus"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="zoomInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBf-HY-gZR"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viA-Gq-gkA" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="51" width="40" height="50"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="F3c-wX-gVt"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.15631642940000001" green="0.90403443569999997" blue="0.87788373230000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="icon" value="Minus"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="zoomOutTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnQ-9x-VMd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Upl-e0-2g5" firstAttribute="leading" secondItem="Ipr-wd-eGS" secondAttribute="leading" id="QLN-bi-WVd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Upl-e0-2g5" secondAttribute="trailing" id="XE3-Ym-JUU"/>
+                                            <constraint firstAttribute="bottom" secondItem="Upl-e0-2g5" secondAttribute="bottom" id="dnG-Me-f3U"/>
+                                            <constraint firstItem="Upl-e0-2g5" firstAttribute="top" secondItem="Ipr-wd-eGS" secondAttribute="top" id="nWB-f6-sMD"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColors">
+                                                <color key="value" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vH3-1l-iXr" customClass="MapNavigationButtonView" customModule="Dog_Maps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="117" width="40" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDS-3W-Wum" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="tintColor" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="CurrentLocation"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="currentLoactionTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHd-wx-3e5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="HDS-3W-Wum" secondAttribute="trailing" id="GoD-vD-ykf"/>
+                                            <constraint firstItem="HDS-3W-Wum" firstAttribute="top" secondItem="vH3-1l-iXr" secondAttribute="top" id="NHk-g3-yQl"/>
+                                            <constraint firstItem="HDS-3W-Wum" firstAttribute="leading" secondItem="vH3-1l-iXr" secondAttribute="leading" id="ZuF-jx-eO6"/>
+                                            <constraint firstAttribute="bottom" secondItem="HDS-3W-Wum" secondAttribute="bottom" id="s7c-1i-AFl"/>
+                                            <constraint firstAttribute="height" constant="40" id="zdS-sj-VP7"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColors">
+                                                <color key="value" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="SmU-8k-mx4"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-hQ-6M6" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
+                                <rect key="frame" x="376" y="824" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dWD-dU-Azi"/>
+                                    <constraint firstAttribute="width" constant="30" id="oDh-lG-0E6"/>
+                                </constraints>
+                                <color key="tintColor" red="0.15631642940000001" green="0.90403443569999997" blue="0.87788373230000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="Info"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="FQy-jG-ACC" secondAttribute="bottom" id="0T5-BF-V2G"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ie-z9-bg2"/>
-                            <constraint firstItem="FQy-jG-ACC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8oj-Zy-IeP"/>
-                            <constraint firstAttribute="trailing" secondItem="FQy-jG-ACC" secondAttribute="trailing" id="DG9-tH-9cJ"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Twm-NF-cwY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dH3-hQ-6M6" secondAttribute="trailing" constant="8" id="acF-m1-tfk"/>
+                            <constraint firstItem="dH3-hQ-6M6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-8" id="auC-g0-plP"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bmH-k4-6nB"/>
-                            <constraint firstItem="FQy-jG-ACC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cgo-tA-3vi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uIf-H1-SjU" secondAttribute="trailing" constant="8" id="fw2-Lf-nfy"/>
+                            <constraint firstItem="uIf-H1-SjU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iML-uW-86E"/>
                             <constraint firstAttribute="bottom" secondItem="ARz-Kd-qvQ" secondAttribute="bottom" id="vIS-yh-AU2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -48,4 +154,10 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CurrentLocation" width="25" height="25"/>
+        <image name="Info" width="50" height="50"/>
+        <image name="Minus" width="20" height="6"/>
+        <image name="Plus" width="20" height="20"/>
+    </resources>
 </document>

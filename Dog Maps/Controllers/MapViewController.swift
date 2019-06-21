@@ -45,7 +45,6 @@ class MapViewController: UIViewController {
             let currentLocation = locationManager.location?.coordinate {
                 centerMapOnLocation(location: currentLocation)
         } else {
-            print("Not enabled")
             centerMapOnLocation(location: defaultLocation)
         }
     }
@@ -69,21 +68,52 @@ class MapViewController: UIViewController {
     }
     
     private func centerMapOnLocation(location: CLLocationCoordinate2D) {
-        print("centering")
         let regionRadius: CLLocationDistance = 3000
         let coordinateRegion = MKCoordinateRegion(center: location,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    func addDetailsVC(with dogGround: DogPlaceLocationAnnotation) {
+    func addDetailsVC(with locationAnnotation: DogPlaceLocationAnnotation) {
         let detailsVC = MapDetailsViewController()
-        detailsVC.dogGround = dogGround
+        detailsVC.locationAnnotation = locationAnnotation
         detailsVC.view.frame = CGRect(x: 0, y: view.frame.maxY, width: view.frame.width, height: view.frame.height - detailsVC.minYPosition)
         addChild(detailsVC)
         view.addSubview(detailsVC.view)
         detailsVC.didMove(toParent: self)
     }
+    
+    private func zoom(by delta: Double) {
+        var region = mapView.region
+//        let coordinate = currentRegion.center
+        var span = region.span
+//        let newRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: span.latitudeDelta / 2, longitudinalMeters: span.longitudeDelta / 2)
+        span.longitudeDelta *= delta
+        span.latitudeDelta *= delta
+        region.span = span
+        
+        mapView.setRegion(region, animated: true)
+        
+    }
+    
+    private func zoomOut() {
+        
+    }
+    
+    @IBAction func currentLoactionTapped(_ sender: Any) {
+        guard let currentLocation = locationManager.location?.coordinate else { return }
+        centerMapOnLocation(location: currentLocation)
+    }
+    
+    @IBAction func zoomInTapped(_ sender: Any) {
+        zoom(by: 0.5)
+    }
+    
+    
+    @IBAction func zoomOutTapped(_ sender: Any) {
+        zoom(by: 2)
+    }
+    
 }
 
 //MARK: MapView
@@ -101,9 +131,9 @@ extension MapViewController: MKMapViewDelegate {
             view.calloutOffset = CGPoint(x: -5, y: 5)
             view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
             view.markerTintColor = .customCyan
-//            view.glyphImage = #imageLiteral(resourceName: "DogWalk-1")
+            view.glyphImage = #imageLiteral(resourceName: "Pin")
             view.glyphTintColor = .black
-            view.glyphText = "🐕"
+//            view.glyphText = "🐕"
         }
         return view
     }
@@ -116,18 +146,21 @@ extension MapViewController: MKMapViewDelegate {
                 child.removeFromParent()
             }
         }
-        let dogGround = view.annotation as! DogPlaceLocationAnnotation
-        addDetailsVC(with: dogGround)
+        let locationAnnotation = view.annotation as! DogPlaceLocationAnnotation
+        addDetailsVC(with: locationAnnotation)
     }
+    
+    
 }
 
 //MARK: Location Manager
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
-            print("allowed")
             guard let currentLocation = locationManager.location?.coordinate else { return }
             centerMapOnLocation(location: currentLocation)
         }
     }
 }
+
+
