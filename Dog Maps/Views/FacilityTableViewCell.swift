@@ -9,7 +9,6 @@
 import UIKit
 
 class FacilityTableViewCell: UITableViewCell {
-    
     var facility: String? {
         willSet {
             textLabel?.text = newValue
@@ -17,7 +16,7 @@ class FacilityTableViewCell: UITableViewCell {
     }
     var isAvailable: Bool? {
         willSet {
-//            isAvailbleImageView.image = newValue! ? #imageLiteral(resourceName: "Yes") : #imageLiteral(resourceName: "No")
+            isAvailbleImageView.image = newValue! ? #imageLiteral(resourceName: "Yes") : #imageLiteral(resourceName: "No")
         }
     }
     
@@ -26,17 +25,6 @@ class FacilityTableViewCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -56,7 +44,5 @@ class FacilityTableViewCell: UITableViewCell {
         isAvailbleImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin).isActive = true
         isAvailbleImageView.widthAnchor.constraint(equalTo: isAvailbleImageView.heightAnchor).isActive = true
     }
-    
-    
 }
 

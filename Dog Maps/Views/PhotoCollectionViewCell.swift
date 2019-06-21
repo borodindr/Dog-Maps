@@ -9,7 +9,6 @@
 import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
-    
     var photo: UIImage? {
         get {
             return imageView.image
@@ -32,7 +31,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     func setView() {
         addSubview(imageView)

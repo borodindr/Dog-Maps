@@ -6,26 +6,27 @@
 //  Copyright © 2019 Dmitry Borodin. All rights reserved.
 //
 
-import UIKit
+//import UIKit
 
-class MapDetailsTableViewHeaderView: UITableViewHeaderFooterView {
-    
-    var isCollapsed: Bool!
-    
-    
-    
-    private var arrowImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
-    
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
-    
-}
+//TODO: Create collapsable table view header
+//class MapDetailsTableViewHeaderView: UITableViewHeaderFooterView {
+//
+//    var isCollapsed: Bool!
+//
+//
+//
+//    private var arrowImageView: UIImageView = {
+//        let imageView = UIImageView()
+//        return imageView
+//    }()
+//
+//
+//    /*
+//     // Only override draw() if you perform custom drawing.
+//     // An empty implementation adversely affects performance during animation.
+//     override func draw(_ rect: CGRect) {
+//     // Drawing code
+//     }
+//     */
+//
+//}

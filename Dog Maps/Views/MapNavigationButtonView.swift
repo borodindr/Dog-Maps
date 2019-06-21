@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable
 class MapNavigationButtonView: UIView {
-    
     @IBInspectable
     var borderWidth: CGFloat = 0 {
         didSet {

@@ -13,9 +13,6 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    
-    
-//    var mapView: MKMapView!
     let locationManager = CLLocationManager()
     var locations = [LocationData]()
     let defaultLocation = CLLocationCoordinate2D(latitude: 55.751244, longitude: 37.618423)
@@ -28,7 +25,6 @@ class MapViewController: UIViewController {
     }
     
     fileprivate func setMapView() {
-//        mapView = MKMapView()
         mapView.delegate = self
         mapView.showsPointsOfInterest = true
         mapView.showsUserLocation = true
@@ -85,19 +81,11 @@ class MapViewController: UIViewController {
     
     private func zoom(by delta: Double) {
         var region = mapView.region
-//        let coordinate = currentRegion.center
         var span = region.span
-//        let newRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: span.latitudeDelta / 2, longitudinalMeters: span.longitudeDelta / 2)
         span.longitudeDelta *= delta
         span.latitudeDelta *= delta
         region.span = span
-        
         mapView.setRegion(region, animated: true)
-        
-    }
-    
-    private func zoomOut() {
-        
     }
     
     @IBAction func currentLoactionTapped(_ sender: Any) {
@@ -109,11 +97,9 @@ class MapViewController: UIViewController {
         zoom(by: 0.5)
     }
     
-    
     @IBAction func zoomOutTapped(_ sender: Any) {
         zoom(by: 2)
     }
-    
 }
 
 //MARK: MapView
@@ -133,7 +119,6 @@ extension MapViewController: MKMapViewDelegate {
             view.markerTintColor = .customCyan
             view.glyphImage = #imageLiteral(resourceName: "Pin")
             view.glyphTintColor = .black
-//            view.glyphText = "🐕"
         }
         return view
     }
@@ -149,8 +134,6 @@ extension MapViewController: MKMapViewDelegate {
         let locationAnnotation = view.annotation as! DogPlaceLocationAnnotation
         addDetailsVC(with: locationAnnotation)
     }
-    
-    
 }
 
 //MARK: Location Manager

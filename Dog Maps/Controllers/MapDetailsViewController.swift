@@ -8,14 +8,10 @@
 
 import UIKit
 
-
-
-
 class MapDetailsViewController: MapDetailsView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        delegate = self
         dataSource = self
         locationAnnotation.delegate = self
     }
@@ -26,24 +22,18 @@ class MapDetailsViewController: MapDetailsView {
         animateView(to: .preview)
     }
     
-    override func updateViewConstraints() {
-        tableHeightConstraint.constant = detailsTableView.contentSize.height
-        super.updateViewConstraints()
-    }
+    
 }
 
 
 extension MapDetailsViewController: LocationAnnotationDelegate {
     func dogGround(didFinishLoading photos: [UIImage]) {
         self.photos = photos
-        photoCollectionView.reloadData()
+        reloadCollectionView()
     }
 }
 
-
-
 extension MapDetailsViewController: UICollectionViewDataSource {
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -62,7 +52,6 @@ extension MapDetailsViewController: UICollectionViewDataSource {
 
 //MARK: Table View Data Source
 extension MapDetailsViewController: UITableViewDataSource {
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -78,14 +67,6 @@ extension MapDetailsViewController: UITableViewDataSource {
         }
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        print("viewForHeaderInSection")
-//        guard let headerView = tableView else { return nil }
-//        print("header found")
-//        headerView.backgroundColor = .clear
-//        return headerView
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -98,7 +79,6 @@ extension MapDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "FacilityCell", for: indexPath) as! FacilityTableViewCell
             let facility = locationAnnotation.facilities[indexPath.row]

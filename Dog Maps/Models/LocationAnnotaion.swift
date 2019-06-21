@@ -17,7 +17,6 @@ class LocationAnnotaion: NSObject, MKAnnotation {
     var district: String
     private var rawCoordinates: [Double]
     private var rawSchedule: [WorkingHours]
-    
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: rawCoordinates[1], longitude: rawCoordinates[0])
     }

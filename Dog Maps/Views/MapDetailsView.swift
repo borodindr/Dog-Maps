@@ -10,6 +10,8 @@ import UIKit
 
 class MapDetailsView: UIViewController {
     
+    //MARK: Properties
+    //public
     var locationAnnotation: DogPlaceLocationAnnotation! {
         didSet {
             addressLabel.text = locationAnnotation.title
@@ -19,13 +21,6 @@ class MapDetailsView: UIViewController {
         }
     }
     
-//    weak var delegate: NSObjectProtocol? {
-//        willSet {
-//            photoCollectionView.delegate = newValue as? UICollectionViewDelegate
-//            detailsTableView.delegate = newValue as? UITableViewDelegate
-//        }
-//    }
-    
     weak var dataSource: NSObjectProtocol? {
         willSet {
             photoCollectionView.dataSource = newValue as? UICollectionViewDataSource
@@ -33,9 +28,6 @@ class MapDetailsView: UIViewController {
         }
     }
     
-//    var previewHeight: CGFloat {
-//        return scrollView.frame.minY + addressLabel.frame.maxY + 4
-//    }
     var photos = [UIImage]()
     let minYPosition: CGFloat = 50
     var maxYPosition: CGFloat! {
@@ -43,8 +35,15 @@ class MapDetailsView: UIViewController {
         return UIScreen.main.bounds.height - previewHeight
     }
     
-    lazy var tableHeightConstraint = NSLayoutConstraint(item: detailsTableView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
+    lazy var tableHeightConstraint = NSLayoutConstraint(item:       detailsTableView,
+                                                        attribute:  .height,
+                                                        relatedBy:  .equal,
+                                                        toItem:     nil,
+                                                        attribute:  .notAnAttribute,
+                                                        multiplier: 1,
+                                                        constant:   0)
     
+    //private
     private var bluredView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .extraLight)
         let bluredView = UIVisualEffectView(effect: blurEffect)
@@ -79,7 +78,6 @@ class MapDetailsView: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
@@ -108,15 +106,9 @@ class MapDetailsView: UIViewController {
         return label
     }()
     
-    let photoCollectionView: UICollectionView = {
+    private let photoCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        //        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
-        //        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        //        layout.minimumLineSpacing = 0
-        //        layout.minimumLineSpacing = 8
         layout.scrollDirection = .horizontal
-        //        let collectionViewHeight = cellHeight + (eachInset * 2)
-        //        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: collectionViewHeight), collectionViewLayout: layout)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCell")
         collectionView.backgroundColor = .clear
@@ -124,7 +116,7 @@ class MapDetailsView: UIViewController {
         return collectionView
     }()
     
-    let detailsTableView: UITableView = {
+    private let detailsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(FacilityTableViewCell.self, forCellReuseIdentifier: "FacilityCell")
         tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: "ScheduleCell")
@@ -138,6 +130,7 @@ class MapDetailsView: UIViewController {
         return tableView
     }()
     
+    
     //MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,12 +141,56 @@ class MapDetailsView: UIViewController {
         setView()
         photoCollectionView.delegate = self
         detailsTableView.delegate = self
-//        photoCollectionView.dataSource = self
-//        detailsTableView.dataSource = self
     }
     
-    @objc func panGesture(sender: UIPanGestureRecognizer) {
+    override func updateViewConstraints() {
+        tableHeightConstraint.constant = detailsTableView.contentSize.height
+        super.updateViewConstraints()
+    }
+    
+    func reloadTableView() {
+        detailsTableView.reloadData()
+    }
+    
+    func reloadCollectionView() {
+        photoCollectionView.reloadData()
+    }
+    
+    func animateView(to state: ViewState, withDuration duration: TimeInterval = 0.3) {
+        let animationOptions: UIView.AnimationOptions = [.allowUserInteraction, .curveEaseOut]
+        var newY: CGFloat
         
+        switch state {
+        case .full:
+            newY = minYPosition
+        case .preview:
+            newY = maxYPosition
+        case .disappear:
+            newY = UIScreen.main.bounds.maxY
+        }
+        
+        let adjustedDeuration = duration > 0.3 ? 0.3 : duration
+        
+        UIView.animate(withDuration: adjustedDeuration, delay: 0, options: animationOptions, animations: {
+            self.view.frame = CGRect(x: 0, y: newY, width: self.view.frame.width, height: self.view.frame.height)
+        }, completion: { (isCompleted) in
+            if isCompleted && state == .disappear {
+                self.disapperView()
+            }
+        })
+    }
+    
+    func disapperView() {
+        willMove(toParent: nil)
+        view.removeFromSuperview()
+        removeFromParent()
+    }
+    
+    @objc func cancelButtonTapped() {
+        animateView(to: .disappear)
+    }
+    
+    @objc private func panGesture(sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
         let velocity = sender.velocity(in: view)
         let y = view.frame.minY
@@ -182,49 +219,13 @@ class MapDetailsView: UIViewController {
         }
     }
     
-    func animateView(to state: ViewState, withDuration duration: TimeInterval = 0.3) {
-        let animationOptions: UIView.AnimationOptions = [.allowUserInteraction, .curveEaseOut]
-        var newY: CGFloat
-        
-        switch state {
-        case .full:
-            newY = minYPosition
-        case .preview:
-            newY = maxYPosition
-        case .disappear:
-            newY = UIScreen.main.bounds.maxY
-        }
-        
-        let adjustedDeuration = duration > 0.3 ? 0.3 : duration
-        
-        UIView.animate(withDuration: adjustedDeuration, delay: 0, options: animationOptions, animations: {
-            self.view.frame = CGRect(x: 0, y: newY, width: self.view.frame.width, height: self.view.frame.height)
-            
-        }, completion: { (isCompleted) in
-            if isCompleted && state == .disappear {
-                self.disapperView()
-            }
-        })
-    }
-    
-    func disapperView() {
-        willMove(toParent: nil)
-        view.removeFromSuperview()
-        removeFromParent()
-    }
-    
-    @objc func cancelButtonTapped() {
-        animateView(to: .disappear)
-    }
-    
     enum ViewState {
         case full, preview, disappear
     }
 }
 
-//MARK: view settings
+//MARK: View Settings
 extension MapDetailsView {
-    
     fileprivate func setView() {
         setDragLineView()
         setCancelButton()
@@ -325,6 +326,7 @@ extension MapDetailsView {
     }
 }
 
+//MARK: Scroll View
 extension MapDetailsView: UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == self.scrollView && (targetContentOffset.pointee.y < addressLabel.frame.maxY + 4) {
@@ -333,6 +335,7 @@ extension MapDetailsView: UIScrollViewDelegate {
     }
 }
 
+//MARK: Gesture Recognizer
 extension MapDetailsView: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         let gesture = (gestureRecognizer as! UIPanGestureRecognizer)
@@ -345,8 +348,8 @@ extension MapDetailsView: UIGestureRecognizerDelegate {
     }
 }
 
+//MARK: Table View Delegate
 extension MapDetailsView: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let view = view as! UITableViewHeaderFooterView
         view.tintColor = .clear
@@ -355,6 +358,7 @@ extension MapDetailsView: UITableViewDelegate {
     }
 }
 
+//MARK: Collection View Delegate and Flow Layout
 extension MapDetailsView: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 2

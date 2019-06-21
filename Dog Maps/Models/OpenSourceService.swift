@@ -51,16 +51,16 @@ struct Geometry: Decodable {
 }
 
 struct Property: Decodable {
-    //    var DatasetId: Int //no need
-    //    var VersionNumber: Int //no need
-    //    var ReleaseNumber: Int //no need
-    //    var RowId: Int? //no need
+//    var DatasetId: Int //no need
+//    var VersionNumber: Int //no need
+//    var ReleaseNumber: Int //no need
+//    var RowId: Int? //no need
     var Attributes: Attribute
 }
 
 struct Attribute: Decodable {
     //for all requests:
-    //    var global_id: Int //no need
+//    var global_id: Int //no need
     ///административный округ
     var AdmArea: String
     ///район
@@ -78,8 +78,8 @@ struct Attribute: Decodable {
     var Lighting: String?
     ///ограда -> Bool
     var Fencing: String?
-    //    var departamentalAffiliation: String? //no need
-    //    var DogParkArea: Double //no need
+//    var departamentalAffiliation: String? //no need
+//    var DogParkArea: Double //no need
     
     //for clinics only:
     ///Полное название

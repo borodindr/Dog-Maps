@@ -24,7 +24,6 @@
 		32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */; };
 		32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */; };
 		32DA1D2D22B7CBB800E972A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2C22B7CBB800E972A0 /* Extensions.swift */; };
-		32EDA50422BC261600848A49 /* MapViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EDA50322BC261500848A49 /* MapViewHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +46,6 @@
 		32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotaion.swift; sourceTree = "<group>"; };
 		32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPlaceLocationAnnotation.swift; sourceTree = "<group>"; };
 		32DA1D2C22B7CBB800E972A0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		32EDA50322BC261500848A49 /* MapViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +108,6 @@
 				32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */,
 				32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */,
 				32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */,
-				32EDA50322BC261500848A49 /* MapViewHeaderView.swift */,
 				32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */,
 				32213C6522BC314900FF5724 /* MapNavigationButton.swift */,
 			);
@@ -207,7 +204,6 @@
 				32DA1D1F22B7CAC000E972A0 /* PhotoCollectionViewCell.swift in Sources */,
 				32213C6422BC277C00FF5724 /* MapNavigationButtonView.swift in Sources */,
 				32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */,
-				32EDA50422BC261600848A49 /* MapViewHeaderView.swift in Sources */,
 				32DA1D1822B7C9D500E972A0 /* MapDetailsViewController.swift in Sources */,
 				32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */,
 				32DA1D1D22B7CA8F00E972A0 /* MapDetailsView.swift in Sources */,

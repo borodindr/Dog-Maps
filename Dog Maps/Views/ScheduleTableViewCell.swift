@@ -9,7 +9,6 @@
 import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
-    
     var schedule: Schedule? {
         willSet {
             weekDayLabel.text = newValue?.day.rawValue.capitalizingFirstLetter()
@@ -48,17 +47,6 @@ class ScheduleTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
     private func setView() {
         addSubview(stackView)
         stackView.addArrangedSubview(weekDayLabel)
@@ -68,6 +56,5 @@ class ScheduleTableViewCell: UITableViewCell {
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
         stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
     }
-    
 }
 
