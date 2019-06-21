@@ -28,7 +28,13 @@ class MapDetailsView: UIViewController {
         }
     }
     
-    var photos = [UIImage]()
+    var photos = [UIImage]() {
+        didSet {
+            removeLoadingIndicator()
+        }
+    }
+    
+    
     let minYPosition: CGFloat = 50
     var maxYPosition: CGFloat! {
         let previewHeight = scrollView.frame.minY + addressLabel.frame.maxY + 4
@@ -130,6 +136,12 @@ class MapDetailsView: UIViewController {
         return tableView
     }()
     
+    private let loadingIndicator: UIActivityIndicatorView = {
+        let loadingIndicator = UIActivityIndicatorView(style: .gray)
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return loadingIndicator
+    }()
+    
     
     //MARK: Methods
     override func viewDidLoad() {
@@ -141,6 +153,13 @@ class MapDetailsView: UIViewController {
         setView()
         photoCollectionView.delegate = self
         detailsTableView.delegate = self
+        
+        addLoadingIndicatorToCollectionView()
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        
     }
     
     override func updateViewConstraints() {
@@ -184,6 +203,19 @@ class MapDetailsView: UIViewController {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()
+    }
+    
+    func addLoadingIndicatorToCollectionView() {
+        photoCollectionView.addSubview(loadingIndicator)
+        loadingIndicator.centerXAnchor.constraint(equalTo: photoCollectionView.centerXAnchor).isActive = true
+        loadingIndicator.centerYAnchor.constraint(equalTo: photoCollectionView.centerYAnchor).isActive = true
+        
+        loadingIndicator.startAnimating()
+    }
+    
+    func removeLoadingIndicator() {
+        loadingIndicator.removeFromSuperview()
+        loadingIndicator.stopAnimating()
     }
     
     @objc func cancelButtonTapped() {

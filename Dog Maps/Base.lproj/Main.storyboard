@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-H1-SjU">
                                 <rect key="frame" x="366" y="369.5" width="40" height="157"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipr-wd-eGS" customClass="MapNavigationButtonView" customModule="Dog_Maps" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ipr-wd-eGS" customClass="MapNavigationView" customModule="Dog_Maps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="101"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Upl-e0-2g5">
@@ -70,7 +70,7 @@
                                             <constraint firstItem="Upl-e0-2g5" firstAttribute="top" secondItem="Ipr-wd-eGS" secondAttribute="top" id="nWB-f6-sMD"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColors">
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -81,7 +81,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vH3-1l-iXr" customClass="MapNavigationButtonView" customModule="Dog_Maps" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vH3-1l-iXr" customClass="MapNavigationView" customModule="Dog_Maps" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="117" width="40" height="40"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDS-3W-Wum" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
@@ -104,7 +104,7 @@
                                             <constraint firstAttribute="height" constant="40" id="zdS-sj-VP7"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColors">
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" red="0.22352941179999999" green="0.90196078430000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -120,27 +120,45 @@
                                     <constraint firstAttribute="width" constant="40" id="SmU-8k-mx4"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dH3-hQ-6M6" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
-                                <rect key="frame" x="376" y="824" width="30" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ALl-YS-dGC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="0.60121468320000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-RR-fnO">
+                                <rect key="frame" x="299" y="842" width="104" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dWD-dU-Azi"/>
-                                    <constraint firstAttribute="width" constant="30" id="oDh-lG-0E6"/>
+                                    <constraint firstAttribute="height" constant="15" id="4BR-w8-Bgg"/>
                                 </constraints>
-                                <color key="tintColor" red="0.15631642940000001" green="0.90403443569999997" blue="0.87788373230000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="icon" value="Info"/>
-                                </userDefinedRuntimeAttributes>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Источник: data.mos.ru">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="10" name="SFProText-Semibold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="infoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDI-Ac-gSP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ie-z9-bg2"/>
+                            <constraint firstItem="Wup-RR-fnO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-5" id="BqM-iW-hYk"/>
+                            <constraint firstAttribute="trailing" secondItem="ALl-YS-dGC" secondAttribute="trailing" id="FUe-nC-Doo"/>
+                            <constraint firstItem="Wup-RR-fnO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-11" id="OVR-oB-bm2"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Twm-NF-cwY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dH3-hQ-6M6" secondAttribute="trailing" constant="8" id="acF-m1-tfk"/>
-                            <constraint firstItem="dH3-hQ-6M6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-8" id="auC-g0-plP"/>
+                            <constraint firstItem="ALl-YS-dGC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZZ3-Zu-6fw"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bmH-k4-6nB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uIf-H1-SjU" secondAttribute="trailing" constant="8" id="fw2-Lf-nfy"/>
                             <constraint firstItem="uIf-H1-SjU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="iML-uW-86E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ALl-YS-dGC" secondAttribute="bottom" id="rIE-aO-4gF"/>
+                            <constraint firstItem="ALl-YS-dGC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rW7-nr-hR5"/>
                             <constraint firstAttribute="bottom" secondItem="ARz-Kd-qvQ" secondAttribute="bottom" id="vIS-yh-AU2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -156,7 +174,6 @@
     </scenes>
     <resources>
         <image name="CurrentLocation" width="25" height="25"/>
-        <image name="Info" width="50" height="50"/>
         <image name="Minus" width="20" height="6"/>
         <image name="Plus" width="20" height="20"/>
     </resources>

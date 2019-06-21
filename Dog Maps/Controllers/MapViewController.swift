@@ -100,6 +100,13 @@ class MapViewController: UIViewController {
     @IBAction func zoomOutTapped(_ sender: Any) {
         zoom(by: 2)
     }
+    
+    @IBAction func infoTapped(_ sender: Any) {
+        guard let url = URL(string: "https://data.mos.ru") else { return }
+        UIApplication.shared.open(url)
+//            , options: <#T##[UIApplication.OpenExternalURLOptionsKey : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+    }
+    
 }
 
 //MARK: MapView

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		32213C6422BC277C00FF5724 /* MapNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */; };
+		32213C6422BC277C00FF5724 /* MapNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32213C6322BC277C00FF5724 /* MapNavigationView.swift */; };
 		32213C6622BC314900FF5724 /* MapNavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32213C6522BC314900FF5724 /* MapNavigationButton.swift */; };
 		32DA1D0622B7C93700E972A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D0522B7C93700E972A0 /* AppDelegate.swift */; };
 		32DA1D0822B7C93700E972A0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D0722B7C93700E972A0 /* MapViewController.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationButtonView.swift; sourceTree = "<group>"; };
+		32213C6322BC277C00FF5724 /* MapNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationView.swift; sourceTree = "<group>"; };
 		32213C6522BC314900FF5724 /* MapNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationButton.swift; sourceTree = "<group>"; };
 		32DA1D0222B7C93700E972A0 /* Dog Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DA1D0522B7C93700E972A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */,
 				32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */,
 				32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */,
-				32213C6322BC277C00FF5724 /* MapNavigationButtonView.swift */,
+				32213C6322BC277C00FF5724 /* MapNavigationView.swift */,
 				32213C6522BC314900FF5724 /* MapNavigationButton.swift */,
 			);
 			path = Views;
@@ -202,7 +202,7 @@
 				32DA1D2D22B7CBB800E972A0 /* Extensions.swift in Sources */,
 				32DA1D0822B7C93700E972A0 /* MapViewController.swift in Sources */,
 				32DA1D1F22B7CAC000E972A0 /* PhotoCollectionViewCell.swift in Sources */,
-				32213C6422BC277C00FF5724 /* MapNavigationButtonView.swift in Sources */,
+				32213C6422BC277C00FF5724 /* MapNavigationView.swift in Sources */,
 				32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */,
 				32DA1D1822B7C9D500E972A0 /* MapDetailsViewController.swift in Sources */,
 				32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */,
@@ -364,7 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "borodindr.Dog-Maps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,7 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "borodindr.Dog-Maps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class MapNavigationButtonView: UIView {
+class MapNavigationView: UIView {
     @IBInspectable
     var borderWidth: CGFloat = 0 {
         didSet {
@@ -18,9 +18,9 @@ class MapNavigationButtonView: UIView {
     }
     
     @IBInspectable
-    var borderColors: UIColor = UIColor.customCyan {
+    var borderColor: UIColor = UIColor.customCyan {
         didSet {
-            layer.borderColor = borderColors.cgColor
+            layer.borderColor = borderColor.cgColor
         }
     }
     
