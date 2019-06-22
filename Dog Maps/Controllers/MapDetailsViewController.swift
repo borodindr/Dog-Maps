@@ -18,11 +18,8 @@ class MapDetailsViewController: MapDetailsView {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         animateView(to: .preview)
     }
-    
-    
 }
 
 

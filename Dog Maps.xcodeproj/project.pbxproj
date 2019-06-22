@@ -19,7 +19,6 @@
 		32DA1D1F22B7CAC000E972A0 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D1E22B7CAC000E972A0 /* PhotoCollectionViewCell.swift */; };
 		32DA1D2122B7CAEC00E972A0 /* FacilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */; };
 		32DA1D2322B7CB0300E972A0 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */; };
-		32DA1D2522B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */; };
 		32DA1D2722B7CB4A00E972A0 /* OpenSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */; };
 		32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */; };
 		32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */; };
@@ -41,7 +40,6 @@
 		32DA1D1E22B7CAC000E972A0 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityTableViewCell.swift; sourceTree = "<group>"; };
 		32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
-		32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailsTableViewHeaderView.swift; sourceTree = "<group>"; };
 		32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceService.swift; sourceTree = "<group>"; };
 		32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotaion.swift; sourceTree = "<group>"; };
 		32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPlaceLocationAnnotation.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				32DA1D1E22B7CAC000E972A0 /* PhotoCollectionViewCell.swift */,
 				32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */,
 				32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */,
-				32DA1D2422B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift */,
 				32213C6322BC277C00FF5724 /* MapNavigationView.swift */,
 				32213C6522BC314900FF5724 /* MapNavigationButton.swift */,
 			);
@@ -197,7 +194,6 @@
 			files = (
 				32DA1D2122B7CAEC00E972A0 /* FacilityTableViewCell.swift in Sources */,
 				32213C6622BC314900FF5724 /* MapNavigationButton.swift in Sources */,
-				32DA1D2522B7CB2900E972A0 /* MapDetailsTableViewHeaderView.swift in Sources */,
 				32DA1D2322B7CB0300E972A0 /* ScheduleTableViewCell.swift in Sources */,
 				32DA1D2D22B7CBB800E972A0 /* Extensions.swift in Sources */,
 				32DA1D0822B7C93700E972A0 /* MapViewController.swift in Sources */,

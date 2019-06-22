@@ -376,6 +376,10 @@ extension MapDetailsView: UIGestureRecognizerDelegate {
         let y = view.frame.minY
         scrollView.isScrollEnabled = !((y == minYPosition && scrollView.contentOffset.y == 0 && direction > 0) || (y == maxYPosition))
         
+        let cell = detailsTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! FacilityTableViewCell
+        let imageview = cell.isAvailbleImageView
+        print(imageview.frame)
+        
         return false
     }
 }

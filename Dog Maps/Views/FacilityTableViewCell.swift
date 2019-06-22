@@ -16,7 +16,7 @@ class FacilityTableViewCell: UITableViewCell {
     }
     var isAvailable: Bool? {
         willSet {
-            isAvailbleImageView.image = newValue! ? #imageLiteral(resourceName: "Yes") : #imageLiteral(resourceName: "No")
+            isAvailbleImageView.image = newValue! ? #imageLiteral(resourceName: "IsAvailable") : #imageLiteral(resourceName: "NotAvailable")
         }
     }
     
@@ -40,7 +40,7 @@ class FacilityTableViewCell: UITableViewCell {
         addSubview(isAvailbleImageView)
         let margin: CGFloat = 8
         isAvailbleImageView.topAnchor.constraint(equalTo: topAnchor, constant: margin).isActive = true
-        isAvailbleImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin).isActive = true
+        isAvailbleImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin - 8).isActive = true
         isAvailbleImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin).isActive = true
         isAvailbleImageView.widthAnchor.constraint(equalTo: isAvailbleImageView.heightAnchor).isActive = true
     }
