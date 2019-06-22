@@ -12,6 +12,8 @@ import MapKit
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     
     let locationManager = CLLocationManager()
     var locations = [LocationData]()
@@ -46,21 +48,60 @@ class MapViewController: UIViewController {
     }
     
     fileprivate func requestLocations() {
-        OpenSourceService.requestLocations { [unowned self] (locations, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            if let locations = locations {
+        startLoadingIndicator()
+        OpenSourceService.shared.requestLocations { [unowned self] (status) in
+            switch status {
+            case .success(let locations):
                 for location in locations {
-                    
                     let dogGround = DogPlaceLocationAnnotation(data: location)
                     DispatchQueue.main.async {
                         self.mapView.addAnnotation(dogGround)
                     }
                 }
+                DispatchQueue.main.async {
+                    self.stopLoadingIndicator()
+                }
+            default:
+                DispatchQueue.main.async {
+                    self.showErrorAlert(with: status)
+                }
             }
         }
+    }
+    
+    private func startLoadingIndicator() {
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+    }
+    
+    private func stopLoadingIndicator() {
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
+    }
+    
+    private func showErrorAlert(with status: OpenSourceService.Status) {
+        var title: String
+        var message: String
+        switch status {
+        case .noConnection:
+            title = "Нет интернета"
+            message = "Проверьте соединение с интернетом"
+        case .badConnection:
+            title = "Плохое соединене"
+            message = "Проверьте соединение с интернетом или попробуйте позже"
+        case .fetchError, .unknownError:
+            title = "Неизвестная ошибка"
+            message = "Попробуйте позже"
+        case .success:
+            return
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let repeatButton = UIAlertAction(title: "Повторить", style: .default) { [unowned self] (nil) in
+            self.requestLocations()
+        }
+        alert.addAction(repeatButton)
+        present(alert, animated: true, completion: nil)
     }
     
     private func centerMapOnLocation(location: CLLocationCoordinate2D) {
@@ -79,13 +120,18 @@ class MapViewController: UIViewController {
         detailsVC.didMove(toParent: self)
     }
     
-    private func zoom(by delta: Double) {
+    private func zoom(by delta: Double, duration: TimeInterval) {
         var region = mapView.region
         var span = region.span
-        span.longitudeDelta *= delta
-        span.latitudeDelta *= delta
+        let newLongitude = delta * span.longitudeDelta
+        let newLatitude = delta * span.latitudeDelta
+        span.longitudeDelta = newLongitude > 125 ? 125 : newLongitude
+        span.latitudeDelta = newLatitude > 125 ? 125 : newLatitude
         region.span = span
-        mapView.setRegion(region, animated: true)
+        
+        MKMapView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseIn, animations: {
+            self.mapView.setRegion(region, animated: true)
+        }, completion: nil)
     }
     
     @IBAction func currentLoactionTapped(_ sender: Any) {
@@ -94,19 +140,17 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func zoomInTapped(_ sender: Any) {
-        zoom(by: 0.5)
+        zoom(by: 0.5, duration: 0.3)
     }
     
     @IBAction func zoomOutTapped(_ sender: Any) {
-        zoom(by: 2)
+        zoom(by: 2, duration: 0.3)
     }
     
     @IBAction func infoTapped(_ sender: Any) {
         guard let url = URL(string: "https://data.mos.ru") else { return }
         UIApplication.shared.open(url)
-//            , options: <#T##[UIApplication.OpenExternalURLOptionsKey : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
     }
-    
 }
 
 //MARK: MapView

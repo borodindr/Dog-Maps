@@ -11,28 +11,81 @@ import Foundation
 let dogGroundsUrlString = "https://apidata.mos.ru/v1/features/2663?api_key=616e9481d0a656c24ed6bf0055b27576"
 
 struct OpenSourceService {
-    static func requestLocations(completion: @escaping ([LocationData]?, Error?) -> Void) {
+    
+    enum Status: Error {
+        case success([LocationData])
+        case noConnection
+        case badConnection
+        case unknownError
+        case fetchError
+    }
+    
+    static var shared = OpenSourceService()
+    
+    func requestLocations(completion: @escaping (Status) -> Void) {
         let url = URL(string: dogGroundsUrlString)!
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print("Error: \(error)")
-                completion(nil, error)
+            if let error = error as NSError? {
+                
+                let status = self.errorStatus(of: error)
+                completion(status)
             }
             
             if let data = data {
                 do {
                     let locationData = try JSONDecoder().decode(OperSourceData.self, from: data)
-                    let locations = locationData.features
-                    completion(locations, nil)
+                    guard let locations = locationData.features else {
+                        completion(Status.fetchError)
+                        return
+                    }
+                    let status = Status.success(locations)
+                    completion(status)
                     
                     
                 } catch {
-                    completion(nil, error)
+                    let status = Status.fetchError
+                    completion(status)
                 }
             }
             }.resume()
     }
+    
+    private func errorStatus(of error: NSError) -> Status {
+        let errorCode = error.code
+        switch errorCode {
+        case -1009:
+            return .noConnection
+        case -1001:
+            return .badConnection
+        default:
+            return .unknownError
+        }
+    }
+    
+//    static func requestLocations(completion: @escaping ([LocationData]?, Error?) -> Void) {
+//        let url = URL(string: dogGroundsUrlString)!
+//        let request = URLRequest(url: url)
+//        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let error = error {
+//
+//                print("Error: \(error)")
+//                completion(nil, error)
+//            }
+//
+//            if let data = data {
+//                do {
+//                    let locationData = try JSONDecoder().decode(OperSourceData.self, from: data)
+//                    let locations = locationData.features
+//                    completion(locations, nil)
+//
+//
+//                } catch {
+//                    completion(nil, error)
+//                }
+//            }
+//            }.resume()
+//    }
 }
 
 struct OperSourceData: Decodable {

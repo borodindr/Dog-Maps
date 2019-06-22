@@ -145,6 +145,21 @@
                                     <action selector="infoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDI-Ac-gSP"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGK-NK-qVw">
+                                <rect key="frame" x="376" y="333.5" width="20" height="20"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TX2-Zp-qbq">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TX2-Zp-qbq" firstAttribute="centerX" secondItem="SGK-NK-qVw" secondAttribute="centerX" id="LBp-ho-SVa"/>
+                                    <constraint firstItem="TX2-Zp-qbq" firstAttribute="centerY" secondItem="SGK-NK-qVw" secondAttribute="centerY" id="cSN-AZ-vUR"/>
+                                    <constraint firstAttribute="height" constant="20" id="cuT-9d-HZh"/>
+                                    <constraint firstAttribute="width" constant="20" id="jcO-38-ptP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -153,6 +168,7 @@
                             <constraint firstAttribute="trailing" secondItem="ALl-YS-dGC" secondAttribute="trailing" id="FUe-nC-Doo"/>
                             <constraint firstItem="Wup-RR-fnO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-11" id="OVR-oB-bm2"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Twm-NF-cwY"/>
+                            <constraint firstItem="SGK-NK-qVw" firstAttribute="centerX" secondItem="uIf-H1-SjU" secondAttribute="centerX" id="Xsq-m6-fvo"/>
                             <constraint firstItem="ALl-YS-dGC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZZ3-Zu-6fw"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bmH-k4-6nB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uIf-H1-SjU" secondAttribute="trailing" constant="8" id="fw2-Lf-nfy"/>
@@ -160,10 +176,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="ALl-YS-dGC" secondAttribute="bottom" id="rIE-aO-4gF"/>
                             <constraint firstItem="ALl-YS-dGC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rW7-nr-hR5"/>
                             <constraint firstAttribute="bottom" secondItem="ARz-Kd-qvQ" secondAttribute="bottom" id="vIS-yh-AU2"/>
+                            <constraint firstItem="uIf-H1-SjU" firstAttribute="top" secondItem="SGK-NK-qVw" secondAttribute="bottom" constant="16" id="yP6-lm-usR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="TX2-Zp-qbq" id="tlB-mq-eHY"/>
                         <outlet property="mapView" destination="ARz-Kd-qvQ" id="fMA-Wd-Sug"/>
                     </connections>
                 </viewController>
