@@ -28,6 +28,8 @@
 /* Begin PBXFileReference section */
 		32213C6322BC277C00FF5724 /* MapNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationView.swift; sourceTree = "<group>"; };
 		32213C6522BC314900FF5724 /* MapNavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationButton.swift; sourceTree = "<group>"; };
+		322CAECA22BE7F5B0049F5AB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		322CAECB22BE7F5C0049F5AB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		32DA1D0222B7C93700E972A0 /* Dog Maps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Maps.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DA1D0522B7C93700E972A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32DA1D0722B7C93700E972A0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 32DA1CF922B7C93700E972A0;
 			productRefGroup = 32DA1D0322B7C93700E972A0 /* Products */;
@@ -215,6 +218,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				32DA1D0A22B7C93700E972A0 /* Base */,
+				322CAECA22BE7F5B0049F5AB /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -223,6 +227,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				32DA1D0F22B7C93A00E972A0 /* Base */,
+				322CAECB22BE7F5C0049F5AB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -234,6 +239,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -295,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -323,7 +330,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: borodindr@gmail.com (K24BPKGG9L)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -350,6 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UU896HB87U;
 				INFOPLIST_FILE = "Dog Maps/Info.plist";
@@ -359,6 +367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "borodindr.Dog-Maps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -368,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UU896HB87U;
 				INFOPLIST_FILE = "Dog Maps/Info.plist";
@@ -377,6 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "borodindr.Dog-Maps";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

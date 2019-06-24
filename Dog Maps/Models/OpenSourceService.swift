@@ -62,30 +62,6 @@ struct OpenSourceService {
             return .unknownError
         }
     }
-    
-//    static func requestLocations(completion: @escaping ([LocationData]?, Error?) -> Void) {
-//        let url = URL(string: dogGroundsUrlString)!
-//        let request = URLRequest(url: url)
-//        URLSession.shared.dataTask(with: request) { (data, response, error) in
-//            if let error = error {
-//
-//                print("Error: \(error)")
-//                completion(nil, error)
-//            }
-//
-//            if let data = data {
-//                do {
-//                    let locationData = try JSONDecoder().decode(OperSourceData.self, from: data)
-//                    let locations = locationData.features
-//                    completion(locations, nil)
-//
-//
-//                } catch {
-//                    completion(nil, error)
-//                }
-//            }
-//            }.resume()
-//    }
 }
 
 struct OperSourceData: Decodable {

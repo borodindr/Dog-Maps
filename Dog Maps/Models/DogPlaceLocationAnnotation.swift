@@ -52,7 +52,6 @@ class DogPlaceLocationAnnotation: LocationAnnotaion {
     
     var photos: [UIImage] {
         if loadedPhotos == nil {
-            print("nil")
             requestPhotos { (photos) in
                 self.loadedPhotos = photos
                 self.delegate?.dogGround(didFinishLoading: photos)
@@ -89,7 +88,6 @@ class DogPlaceLocationAnnotation: LocationAnnotaion {
             
             semaphore.wait()
             DispatchQueue.main.async {
-                print("call")
                 completion(photos)
             }
         }
