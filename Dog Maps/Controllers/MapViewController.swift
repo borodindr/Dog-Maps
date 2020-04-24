@@ -13,6 +13,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var statusBarBackgroundView: UIView!
     
     
     let locationManager = CLLocationManager()
@@ -21,6 +22,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusBarBackgroundView.alpha = 0.6
         setMapView()
         setLocationManager()
         requestLocations()
@@ -52,6 +54,7 @@ class MapViewController: UIViewController {
         OpenSourceService.shared.requestLocations { [unowned self] (status) in
             switch status {
             case .success(let locations):
+                print("Success")
                 for location in locations {
                     let dogGround = DogPlaceLocationAnnotation(data: location)
                     DispatchQueue.main.async {
@@ -87,7 +90,7 @@ class MapViewController: UIViewController {
             title = "Нет интернета"
             message = "Проверьте соединение с интернетом"
         case .badConnection:
-            title = "Плохое соединене"
+            title = "Плохое соединение"
             message = "Проверьте соединение с интернетом или попробуйте позже"
         case .fetchError, .unknownError:
             title = "Неизвестная ошибка"

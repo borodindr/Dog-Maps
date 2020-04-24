@@ -14,6 +14,7 @@ class MapDetailsView: UIViewController {
     //public
     var locationAnnotation: DogPlaceLocationAnnotation! {
         didSet {
+            print("did set")
             addressLabel.text = locationAnnotation.title
             districtLabel.text = locationAnnotation.district
             admAreaLabel.text = locationAnnotation.admArea
@@ -38,7 +39,11 @@ class MapDetailsView: UIViewController {
     let minYPosition: CGFloat = 50
     var maxYPosition: CGFloat! {
         let previewHeight = scrollView.frame.minY + addressLabel.frame.maxY + 4
-        return UIScreen.main.bounds.height - previewHeight
+        print("scroll:", scrollView.frame.minY)
+        print("address:", addressLabel.frame)
+        let bottomSafeAreaInset = (parent?.view.safeAreaInsets.bottom ?? 0) + 16
+        print(bottomSafeAreaInset)
+        return UIScreen.main.bounds.height - previewHeight - bottomSafeAreaInset
     }
     
     lazy var tableHeightConstraint = NSLayoutConstraint(item:       detailsTableView,
@@ -158,10 +163,6 @@ class MapDetailsView: UIViewController {
         
     }
     
-    override func viewWillLayoutSubviews() {
-        
-    }
-    
     override func updateViewConstraints() {
         tableHeightConstraint.constant = detailsTableView.contentSize.height
         super.updateViewConstraints()
@@ -178,7 +179,7 @@ class MapDetailsView: UIViewController {
     func animateView(to state: ViewState, withDuration duration: TimeInterval = 0.3) {
         let animationOptions: UIView.AnimationOptions = [.allowUserInteraction, .curveEaseOut]
         var newY: CGFloat
-        
+        view.layoutIfNeeded()
         switch state {
         case .full:
             newY = minYPosition
@@ -188,18 +189,18 @@ class MapDetailsView: UIViewController {
             newY = UIScreen.main.bounds.maxY
         }
         
-        let adjustedDeuration = duration > 0.3 ? 0.3 : duration
+        let adjustedDuration = duration > 0.3 ? 0.3 : duration
         
-        UIView.animate(withDuration: adjustedDeuration, delay: 0, options: animationOptions, animations: {
+        UIView.animate(withDuration: adjustedDuration, delay: 0, options: animationOptions, animations: {
             self.view.frame = CGRect(x: 0, y: newY, width: self.view.frame.width, height: self.view.frame.height)
         }, completion: { (isCompleted) in
             if isCompleted && state == .disappear {
-                self.disapperView()
+                self.disappearView()
             }
         })
     }
     
-    func disapperView() {
+    func disappearView() {
         willMove(toParent: nil)
         view.removeFromSuperview()
         removeFromParent()

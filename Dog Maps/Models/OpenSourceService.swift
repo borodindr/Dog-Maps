@@ -26,6 +26,7 @@ struct OpenSourceService {
         let url = URL(string: dogGroundsUrlString)!
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
             if let error = error as NSError? {
                 
                 let status = self.errorStatus(of: error)

@@ -10,6 +10,8 @@ import UIKit
 
 class MapDetailsViewController: MapDetailsView {
     
+    var isDisplayed = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
@@ -18,7 +20,15 @@ class MapDetailsViewController: MapDetailsView {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animateView(to: .preview)
+//        animateView(to: .preview)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !isDisplayed {
+            animateView(to: .preview)
+            isDisplayed = true
+        }
     }
 }
 
