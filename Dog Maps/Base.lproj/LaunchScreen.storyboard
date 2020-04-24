@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="width" constant="40" id="T9N-zI-had"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luf-Nz-HJ7">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luf-Nz-HJ7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="0.60121468320000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

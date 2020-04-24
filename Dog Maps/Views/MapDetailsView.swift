@@ -56,7 +56,14 @@ class MapDetailsView: UIViewController {
     
     //private
     private var bluredView: UIVisualEffectView = {
-        let blurEffect = UIBlurEffect(style: .extraLight)
+        let blurEffect: UIBlurEffect
+        
+        if #available(iOS 13.0, *) {
+            blurEffect = UIBlurEffect(style: .systemMaterial)
+        } else {
+            blurEffect = UIBlurEffect(style: .extraLight)
+        }
+
         let bluredView = UIVisualEffectView(effect: blurEffect)
         bluredView.frame = UIScreen.main.bounds
         bluredView.clipsToBounds = true

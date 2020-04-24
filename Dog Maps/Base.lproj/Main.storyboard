@@ -30,7 +30,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZy-XB-N1c" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="QhI-np-iN1"/>
                                                         </constraints>
@@ -44,7 +44,7 @@
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viA-Gq-gkA" customClass="MapNavigationButton" customModule="Dog_Maps" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="51" width="40" height="50"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="F3c-wX-gVt"/>
                                                         </constraints>
@@ -93,7 +93,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="HDS-3W-Wum" secondAttribute="trailing" id="GoD-vD-ykf"/>
                                             <constraint firstItem="HDS-3W-Wum" firstAttribute="top" secondItem="vH3-1l-iXr" secondAttribute="top" id="NHk-g3-yQl"/>
@@ -123,7 +123,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-RR-fnO">
-                                <rect key="frame" x="299" y="842" width="104" height="15"/>
+                                <rect key="frame" x="299" y="827" width="104" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="4BR-w8-Bgg"/>
                                 </constraints>
@@ -131,8 +131,8 @@
                                     <attributedString key="attributedTitle">
                                         <fragment content="Источник: data.mos.ru">
                                             <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <font key="NSFont" size="10" name="SFProText-Semibold"/>
+                                                <color key="NSColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="10" name="SFProText-Heavy"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" tighteningFactorForTruncation="0.0"/>
                                                 <integer key="NSUnderline" value="1"/>
                                             </attributes>
@@ -162,7 +162,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ie-z9-bg2"/>
-                            <constraint firstItem="Wup-RR-fnO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-5" id="BqM-iW-hYk"/>
+                            <constraint firstItem="Wup-RR-fnO" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-20" id="BqM-iW-hYk"/>
                             <constraint firstAttribute="trailing" secondItem="ALl-YS-dGC" secondAttribute="trailing" id="FUe-nC-Doo"/>
                             <constraint firstItem="Wup-RR-fnO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-11" id="OVR-oB-bm2"/>
                             <constraint firstItem="ARz-Kd-qvQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Twm-NF-cwY"/>
