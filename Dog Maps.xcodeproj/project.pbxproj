@@ -20,7 +20,7 @@
 		32DA1D2122B7CAEC00E972A0 /* FacilityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */; };
 		32DA1D2322B7CB0300E972A0 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */; };
 		32DA1D2722B7CB4A00E972A0 /* OpenSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */; };
-		32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */; };
+		32DA1D2922B7CB6500E972A0 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2822B7CB6500E972A0 /* LocationAnnotation.swift */; };
 		32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */; };
 		32DA1D2D22B7CBB800E972A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA1D2C22B7CBB800E972A0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 		32DA1D2022B7CAEC00E972A0 /* FacilityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacilityTableViewCell.swift; sourceTree = "<group>"; };
 		32DA1D2222B7CB0300E972A0 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceService.swift; sourceTree = "<group>"; };
-		32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotaion.swift; sourceTree = "<group>"; };
+		32DA1D2822B7CB6500E972A0 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogPlaceLocationAnnotation.swift; sourceTree = "<group>"; };
 		32DA1D2C22B7CBB800E972A0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				32DA1D2622B7CB4A00E972A0 /* OpenSourceService.swift */,
-				32DA1D2822B7CB6500E972A0 /* LocationAnnotaion.swift */,
+				32DA1D2822B7CB6500E972A0 /* LocationAnnotation.swift */,
 				32DA1D2A22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift */,
 			);
 			path = Models;
@@ -204,7 +204,7 @@
 				32213C6422BC277C00FF5724 /* MapNavigationView.swift in Sources */,
 				32DA1D2B22B7CB7D00E972A0 /* DogPlaceLocationAnnotation.swift in Sources */,
 				32DA1D1822B7C9D500E972A0 /* MapDetailsViewController.swift in Sources */,
-				32DA1D2922B7CB6500E972A0 /* LocationAnnotaion.swift in Sources */,
+				32DA1D2922B7CB6500E972A0 /* LocationAnnotation.swift in Sources */,
 				32DA1D1D22B7CA8F00E972A0 /* MapDetailsView.swift in Sources */,
 				32DA1D2722B7CB4A00E972A0 /* OpenSourceService.swift in Sources */,
 				32DA1D0622B7C93700E972A0 /* AppDelegate.swift in Sources */,

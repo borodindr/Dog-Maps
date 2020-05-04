@@ -72,46 +72,34 @@ struct OperSourceData: Decodable {
 struct LocationData: Decodable {
     var geometry: Geometry
     var properties: Property
-    //    var type: String //no need
 }
 
 struct Geometry: Decodable {
     var coordinates: [Double]
-    //    var type: String //no need
 }
 
 struct Property: Decodable {
-//    var DatasetId: Int //no need
-//    var VersionNumber: Int //no need
-//    var ReleaseNumber: Int //no need
-//    var RowId: Int? //no need
     var Attributes: Attribute
 }
 
 struct Attribute: Decodable {
-    //for all requests:
-//    var global_id: Int //no need
     ///административный округ
     var AdmArea: String
     ///район
     var District: String
     var WorkingHours: [WorkingHours]
     
-    //for dog grounds only:
     ///фотографии
-    var Photo: [PhotosLnksSuffixes]?
+    var Photo: [PhotosLinksSuffixes]?
     ///адрес площадки
     var Location: String?
-    ///что есть на площадге
+    ///что есть на площадке
     var Elements: [String]?
     ///освещение -> Bool
     var Lighting: String?
     ///ограда -> Bool
     var Fencing: String?
-//    var departamentalAffiliation: String? //no need
-//    var DogParkArea: Double //no need
     
-    //for clinics only:
     ///Полное название
     var FullName: String?
     ///Короткое название
@@ -129,7 +117,7 @@ struct PublicPhone: Decodable {
     var PublicPhone: String
 }
 
-struct PhotosLnksSuffixes: Decodable {
+struct PhotosLinksSuffixes: Decodable {
     ///фотографии
     var Photo: String
 }

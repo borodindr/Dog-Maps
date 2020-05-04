@@ -16,11 +16,11 @@ class FacilityTableViewCell: UITableViewCell {
     }
     var isAvailable: Bool? {
         willSet {
-            isAvailbleImageView.image = newValue! ? #imageLiteral(resourceName: "IsAvailable") : #imageLiteral(resourceName: "NotAvailable")
+            isAvailableImageView.image = newValue! ? #imageLiteral(resourceName: "IsAvailable") : #imageLiteral(resourceName: "NotAvailable")
         }
     }
     
-    var isAvailbleImageView: UIImageView = {
+    var isAvailableImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -37,12 +37,12 @@ class FacilityTableViewCell: UITableViewCell {
     }
     
     private func setView() {
-        addSubview(isAvailbleImageView)
+        addSubview(isAvailableImageView)
         let margin: CGFloat = 8
-        isAvailbleImageView.topAnchor.constraint(equalTo: topAnchor, constant: margin).isActive = true
-        isAvailbleImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin - 8).isActive = true
-        isAvailbleImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin).isActive = true
-        isAvailbleImageView.widthAnchor.constraint(equalTo: isAvailbleImageView.heightAnchor).isActive = true
+        isAvailableImageView.topAnchor.constraint(equalTo: topAnchor, constant: margin).isActive = true
+        isAvailableImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -margin - 8).isActive = true
+        isAvailableImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -margin).isActive = true
+        isAvailableImageView.widthAnchor.constraint(equalTo: isAvailableImageView.heightAnchor).isActive = true
     }
 }
 

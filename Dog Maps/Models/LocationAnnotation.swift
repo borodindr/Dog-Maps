@@ -1,5 +1,5 @@
 //
-//  LocationAnnotaion.swift
+//  LocationAnnotation.swift
 //  Dog Maps
 //
 //  Created by Dmitry Borodin on 17/06/2019.
@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class LocationAnnotaion: NSObject, MKAnnotation {
+class LocationAnnotation: NSObject, MKAnnotation {
     
     var title: String?
     var address: String?

@@ -137,7 +137,7 @@ class MapViewController: UIViewController {
         }, completion: nil)
     }
     
-    @IBAction func currentLoactionTapped(_ sender: Any) {
+    @IBAction func currentLocationTapped(_ sender: Any) {
         guard let currentLocation = locationManager.location?.coordinate else { return }
         centerMapOnLocation(location: currentLocation)
     }

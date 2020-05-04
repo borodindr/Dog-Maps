@@ -55,7 +55,7 @@ class MapDetailsView: UIViewController {
                                                         constant:   0)
     
     //private
-    private var bluredView: UIVisualEffectView = {
+    private var blurredView: UIVisualEffectView = {
         let blurEffect: UIBlurEffect
         
         if #available(iOS 13.0, *) {
@@ -64,10 +64,10 @@ class MapDetailsView: UIViewController {
             blurEffect = UIBlurEffect(style: .extraLight)
         }
 
-        let bluredView = UIVisualEffectView(effect: blurEffect)
-        bluredView.frame = UIScreen.main.bounds
-        bluredView.clipsToBounds = true
-        return bluredView
+        let blurredView = UIVisualEffectView(effect: blurEffect)
+        blurredView.frame = UIScreen.main.bounds
+        blurredView.clipsToBounds = true
+        return blurredView
     }()
     
     private let dragLineView: UIView = {
@@ -271,7 +271,7 @@ extension MapDetailsView {
         setCancelButton()
         setTitleLabel()
         setScrollView()
-        setBluredView()
+        setBlurredView()
     }
     
     fileprivate func setDragLineView() {
@@ -354,9 +354,9 @@ extension MapDetailsView {
         tableHeightConstraint.isActive = true
     }
     
-    fileprivate func setBluredView() {
-        view.insertSubview(bluredView, at: 0)
-        bluredView.layer.cornerRadius = 7
+    fileprivate func setBlurredView() {
+        view.insertSubview(blurredView, at: 0)
+        blurredView.layer.cornerRadius = 7
         let shadowColor            = UIColor.black
         shadowColor.withAlphaComponent(0.5)
         view.layer.shadowColor     = shadowColor.cgColor
@@ -383,10 +383,6 @@ extension MapDetailsView: UIGestureRecognizerDelegate {
         
         let y = view.frame.minY
         scrollView.isScrollEnabled = !((y == minYPosition && scrollView.contentOffset.y == 0 && direction > 0) || (y == maxYPosition))
-        
-        let cell = detailsTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! FacilityTableViewCell
-        let imageview = cell.isAvailbleImageView
-        print(imageview.frame)
         
         return false
     }

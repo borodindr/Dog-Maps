@@ -14,11 +14,11 @@ protocol LocationAnnotationDelegate: AnyObject {
     func dogGround(didFinishLoading photos: [UIImage])
 }
 
-class DogPlaceLocationAnnotation: LocationAnnotaion {
+class DogPlaceLocationAnnotation: LocationAnnotation {
     
     weak var delegate: LocationAnnotationDelegate?
     
-    private var photosLnksSuffixes: [PhotosLnksSuffixes]?
+    private var photosLinksSuffixes: [PhotosLinksSuffixes]?
     private var rawFacilities: [String]?
     private var loadedPhotos: [UIImage]?
     private var rawLighting: String?
@@ -44,7 +44,7 @@ class DogPlaceLocationAnnotation: LocationAnnotaion {
     override init(data: LocationData) {
         super.init(data: data)
         self.title = data.properties.Attributes.Location
-        self.photosLnksSuffixes = data.properties.Attributes.Photo
+        self.photosLinksSuffixes = data.properties.Attributes.Photo
         self.rawFacilities = data.properties.Attributes.Elements
         self.rawLighting = data.properties.Attributes.Lighting
         self.rawFencing = data.properties.Attributes.Fencing
@@ -65,7 +65,7 @@ class DogPlaceLocationAnnotation: LocationAnnotaion {
         
         DispatchQueue.global(qos: .utility).async {
             let semaphore = DispatchSemaphore(value: 0)
-            guard let links = self.photosLnksSuffixes else { return }
+            guard let links = self.photosLinksSuffixes else { return }
             for photoLinkSuffix in links {
                 
                 let urlString = "https://op.mos.ru/MEDIA/showFile?id=" + photoLinkSuffix.Photo
